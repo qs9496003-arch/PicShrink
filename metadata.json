@@ -1,0 +1,6 @@
+{
+  "name": "Image Toolbox",
+  "description": "Comprehensive image processing suite: resize, crop, filter, convert, erase background, extract text, watermark, collage, and QR code tools.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
