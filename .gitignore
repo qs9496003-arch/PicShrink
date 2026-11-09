@@ -1,15 +1,10 @@
-*.iml
-.gradle
-/local.properties
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+*.local
+
+# OS
 .DS_Store
-/build
-/app/release
-/captures
-.externalNativeBuild
-.cxx
-/.idea
-/libs/nQuant/build
-/.kotlin/errors/
-/.kotlin
-/scripts/
-/outputs/
