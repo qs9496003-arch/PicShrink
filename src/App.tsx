@@ -22,8 +22,8 @@ export const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       return (
-        localStorage.getItem('it_theme') === 'dark' ||
-        (!('it_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        localStorage.getItem('picshrink_theme') === 'dark' ||
+        (!('picshrink_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
       );
     }
     return false;
@@ -33,10 +33,10 @@ export const App: React.FC = () => {
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('it_theme', 'dark');
+      localStorage.setItem('picshrink_theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('it_theme', 'light');
+      localStorage.setItem('picshrink_theme', 'light');
     }
   }, [darkMode]);
 

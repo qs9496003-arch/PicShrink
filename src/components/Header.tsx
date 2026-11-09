@@ -48,10 +48,10 @@ export const Header: React.FC<HeaderProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <h1 className="font-bold text-base md:text-lg tracking-tight text-slate-900 dark:text-white">
-                Image Toolbox
+                PicShrink
               </h1>
               <span className="hidden sm:inline-flex text-[10px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200/60 dark:border-indigo-800/60">
-                Web Edition
+                by SadSha
               </span>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400 hidden sm:block">
@@ -85,11 +85,11 @@ export const Header: React.FC<HeaderProps> = ({
         </button>
 
         <a
-          href="https://github.com/T8RIN/ImageToolbox"
+          href="https://github.com/qs9496003-arch/PicShrink"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden sm:flex items-center gap-1.5 p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-          title="Original Android Project by T8RIN"
+          title="PicShrink source on GitHub"
         >
           <Code2 className="w-5 h-5" />
         </a>

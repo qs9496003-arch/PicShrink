@@ -94,7 +94,7 @@ export function createProceduralSample(): string {
   ctx.font = 'bold 28px sans-serif';
   ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
   ctx.textAlign = 'center';
-  ctx.fillText('Image Toolbox Demo', 400, 540);
+  ctx.fillText('PicShrink Demo', 400, 540);
 
   return canvas.toDataURL('image/jpeg', 0.9);
 }

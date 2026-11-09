@@ -22,8 +22,8 @@ export const QrTool: React.FC = () => {
 
   // Generator state
   const [qrType, setQrType] = useState<QrType>('url');
-  const [urlValue, setUrlValue] = useState('https://github.com/T8RIN/ImageToolbox');
-  const [textValue, setTextValue] = useState('Hello from Image Toolbox Web!');
+  const [urlValue, setUrlValue] = useState('https://toolzo.app/picshrink/');
+  const [textValue, setTextValue] = useState('Hello from PicShrink!');
   
   // WiFi state
   const [wifiSsid, setWifiSsid] = useState('MyHomeWiFi');
