@@ -230,7 +230,7 @@ export const ResizeConvertTool: React.FC = () => {
     });
 
     const content = await zip.generateAsync({ type: 'blob' });
-    downloadBlob(content, 'image_toolbox_batch.zip');
+    downloadBlob(content, 'picshrink_batch.zip');
   };
 
   return (

@@ -171,7 +171,7 @@ export const CollageTool: React.FC = () => {
 
   const handleDownload = () => {
     if (!previewUrl) return;
-    downloadDataUrl(previewUrl, 'image_toolbox_collage.jpg');
+    downloadDataUrl(previewUrl, 'picshrink_collage.jpg');
   };
 
   return (
