@@ -216,16 +216,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
 
         {/* Footer info */}
-        <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
+        <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
           <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 text-xs text-slate-500 dark:text-slate-400">
             <div className="flex items-center gap-1.5 font-medium text-slate-700 dark:text-slate-300 mb-1">
               <Sparkles className="w-3.5 h-3.5 text-amber-500" />
               <span>100% Client-Side</span>
             </div>
             <p className="leading-relaxed text-[11px]">
-              Your images are processed locally in your browser. No files are uploaded to any server.
+              Your privacy matters — no file ever leaves your device. Your images are processed locally in your browser. No files are uploaded to any server.
             </p>
           </div>
+          <p className="text-[11px] leading-relaxed text-slate-400 dark:text-slate-500 px-1">
+            Based on ImageToolbox by T8RIN, Apache 2.0
+          </p>
         </div>
       </aside>
     </>

@@ -74,6 +74,14 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
         )}
 
+        <a
+          href="mailto:info@toolzo.app?subject=PicShrink%20%E2%80%94%20Buy%20%249.99%20lifetime"
+          className="hidden sm:inline-flex items-center px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition-colors"
+          title="Buy PicShrink — $9.99 lifetime"
+        >
+          $9.99 lifetime
+        </a>
+
         <button
           type="button"
           onClick={onToggleDarkMode}
