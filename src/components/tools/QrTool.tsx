@@ -13,6 +13,7 @@ import {
   Check 
 } from 'lucide-react';
 import QRCode from 'qrcode';
+import jsQR from 'jsqr';
 import { downloadDataUrl } from '../../utils/imageProcessors';
 
 type QrType = 'url' | 'text' | 'wifi' | 'contact' | 'phone';
@@ -90,7 +91,8 @@ export const QrTool: React.FC = () => {
     downloadDataUrl(generatedDataUrl, 'qrcode.png');
   };
 
-  // Scan file image using BarcodeDetector API if available, or fallback
+  // Scan file image: native BarcodeDetector first (QR + barcodes, Chrome/Edge),
+  // then a jsQR fallback so QR codes scan in every browser, fully client-side.
   const handleScanImage = async (file: File) => {
     setIsScanning(true);
     setScannedResult(null);
@@ -110,9 +112,26 @@ export const QrTool: React.FC = () => {
         }
       }
 
-      // Fallback message if browser lacks BarcodeDetector API
+      // Fallback: decode QR codes with jsQR (works in any browser)
+      const bitmap = await createImageBitmap(file);
+      const canvas = document.createElement('canvas');
+      canvas.width = bitmap.width;
+      canvas.height = bitmap.height;
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.drawImage(bitmap, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const code = jsQR(imageData.data, imageData.width, imageData.height);
+        if (code) {
+          setScannedResult(code.data);
+          setIsScanning(false);
+          return;
+        }
+      }
+
+      // Honest result when nothing decodes
       setScannedResult(
-        'BarcodeDetector API evaluated. To test scanning in this browser preview, use Chrome/Edge or generate a custom QR above.'
+        'No QR code found in this image. This scanner reads QR codes in any browser; other barcode types need Chrome or Edge.'
       );
     } catch (e: any) {
       setScannedResult('Could not detect QR code in this image: ' + (e?.message || 'Unsupported format'));

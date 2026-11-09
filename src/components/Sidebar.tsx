@@ -37,7 +37,7 @@ export const TOOLS: ToolDefinition[] = [
     category: 'adjust',
     description: 'Vibrant presets, custom adjustments, dithering, vignette',
     iconName: 'Sliders',
-    badge: '500+ filters'
+    badge: '12 presets'
   },
   {
     id: 'background-eraser',
